@@ -1,0 +1,7 @@
+<%= simple_form_for Account.new do |account| %>
+    <%= account.input :title %>
+    <%= account.input :date %>
+    <%= account.input :amount %>
+     <%= account.submit 'Add Account Record', class: 'btn btn-primary' %>
+    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+<% end %>

@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+<div class="panel-body",background:#F9EECF>
+
+    <h3>balance= <%= @balance %></h3>
+    <h3>debt= <%= @bebt %></h3>
+    <h3>total= <%= @total %></h3>
+</div>
+</div>
+
+<div class="col-md-12">
+        <h1>Account Records</h1>
+        <hr>
+        <table class="table">
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Action</th>
+            </tr>
+            <% @accounts.each do|account| %>
+            <tr>
+                <td><%= account.title %></td>
+                <td><%= account.date %></td>
+                <td><%= account.amount %></td> 
+                <td>
+                    <%= link_to 'Delete', account_path(account), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure?"} %>
+                      <%= link_to 'Update', edit_account_path(account), class: 'btn btn-sm btn-success' %>
+                </td>
+            </tr>
+            <% end %>
+         </table>
+</div>
